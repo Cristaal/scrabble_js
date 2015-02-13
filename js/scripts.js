@@ -7,7 +7,7 @@ var points8 = {8:["J", "X"]};
 var points10 = {10:["Q", "Z"]};
 
 var scrabbleScore = function(word) {
-  var newWord  = word.replace(/\'\b/g, " ").toUpperCase().split('');
+  var newWord  = word.replace(/\'\b/g, " ").toUpperCase().split("");
   var score = 0;
 
 for (var i = 0; i < newWord.length; i++) {
