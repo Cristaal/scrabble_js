@@ -11,6 +11,11 @@ describe('scrabbleScore', function() {
   it("can return a score for words with three-point letter values", function() {
     expect(scrabbleScore("bump")).to.equal(10);
   });
+
+  it("can return a score for words with four-point letter values", function() {
+    expect(scrabbleScore("why")).to.equal(12);
+  });
+
   it("can ignore apostrophes", function() {
     expect(scrabbleScore("bill's")).to.equal(7);
   });
