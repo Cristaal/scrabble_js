@@ -14,4 +14,7 @@ describe('scrabbleScore', function() {
   it("can ignore apostrophes", function() {
     expect(scrabbleScore("bill's")).to.equal(7);
   });
+  it("will give me the score for a series of words", function() {
+    expect(scrabbleScore("Dupree's Diamond Blues")).to.equal(28);
+  });
 });
