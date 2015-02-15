@@ -34,11 +34,12 @@ for (var i = 0; i < newWord.length; i++) {
 };
 
 $(document).ready(function() {
-  $('form#wordForm').submit(function(event) {
+  $('form#word-form').submit(function(event) {
+    event.preventDefault();
     var word = $("#word").val();
+    var totalScore = scrabbleScore(word);
 
-    $(".result").prepend((word).toUpperCase() + " = " + scrabbleScore(word) + "score");
+    $(".result").text(totalScore);
 
-  event.preventDefault();
   });
 });
