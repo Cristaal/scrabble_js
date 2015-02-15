@@ -7,7 +7,7 @@ points[8] = ["J", "X"];
 points[10] = ["Q", "Z"];
 
 var scrabbleScore = function(word) {
-  var newWord  = word.replace(/\'\b/g, " ").toUpperCase().split("");
+  var newWord = word.replace(/\'\b/g, " ").toUpperCase().split("");
   var score = 0;
 
 for (var i = 0; i < newWord.length; i++) {
@@ -34,10 +34,10 @@ for (var i = 0; i < newWord.length; i++) {
 };
 
 $(document).ready(function() {
-  $('form#word-form').submit(function(event) {
+  $("form#word-sheet").submit(function(event) {
     event.preventDefault();
-    var word = $("#word").val();
-    var totalScore = scrabbleScore(word);
+    var newWord = $("input#word").val();
+    var totalScore = scrabbleScore(newWord);
 
     $(".result").text(totalScore);
 
