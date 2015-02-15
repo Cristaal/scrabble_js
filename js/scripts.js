@@ -21,8 +21,24 @@ for (var i = 0; i < newWord.length; i++) {
       score += 3;
     } else if (letter === points[4][n]) {
       score += 4;
+    } else if (letter === points[5][n]) {
+      score += 5;
+    } else if (letter === points[8][n]) {
+      score += 8;
+    } else if (letter === points[10][n]) {
+      score += 10;
     }
+   }
   }
-}
-return score;
+  return score;
 };
+
+$(document).ready(function() {
+  $('form#wordForm').submit(function(event) {
+    var word = $("#word").val();
+
+    $(".result").prepend((word).toUpperCase() + " = " + scrabbleScore(word) + "score");
+
+  event.preventDefault();
+  });
+});
